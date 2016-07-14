@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 import invariant from 'invariant';
 
 export const RESTRICTED_CHARACTERS = /([^a-zA-Z0-9])+/g;

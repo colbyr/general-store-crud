@@ -1,5 +1,5 @@
-/* @flow */
-jest.unmock('../ActionTypes');
+// @flow
+jest.unmock('../ActionTypeSegments');
 import { joinSegments, normalizeSegment } from '../ActionTypeSegments';
 import { check, gen } from 'jest-check';
 
@@ -8,7 +8,7 @@ const nonEmptyString = gen.suchThat(
   gen.string
 );
 
-describe('ActionTypes', () => {
+describe('ActionTypeSegments', () => {
   describe('joinSegments', () => {
     check.it(
       'converts many strings into actions',
