@@ -1,6 +1,6 @@
 /* @flow */
 jest.unmock('../ActionTypes');
-import { joinSegments, normalizeSegment } from '../ActionTypes';
+import { joinSegments, normalizeSegment } from '../ActionTypeSegments';
 import { check, gen } from 'jest-check';
 
 const nonEmptyString = gen.suchThat(
