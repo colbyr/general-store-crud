@@ -1,0 +1,8 @@
+[ignore]
+.*/dist/.*
+.*/lib/.*
+.*/node_modules/.*
+
+[include]
+
+[options]
