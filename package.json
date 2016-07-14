@@ -1,0 +1,25 @@
+{
+  "name": "general-store-crud",
+  "version": "1.0.0",
+  "description": "C.R.U.D. actions for general-store.",
+  "main": "index.js",
+  "scripts": {
+    "test": "flow check && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colbyr/general-store-crud.git"
+  },
+  "keywords": [
+    "react",
+    "flux",
+    "general-store",
+    "rest"
+  ],
+  "author": "Colby Rabideau <me@colbyr.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colbyr/general-store-crud/issues"
+  },
+  "homepage": "https://github.com/colbyr/general-store-crud#readme"
+}
