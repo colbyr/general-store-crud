@@ -13,19 +13,27 @@ function constants(...keys): ActionTypes {
   return result;
 }
 
-export function makeActionTypes(namespace: string): ActionTypes {
+export function makeVerbActionTypes(
+  verb: string,
+  namespace: string
+): ActionTypes {
   return constants(
-    joinSegments(namespace, CREATE, BEGAN),
-    joinSegments(namespace, CREATE, FAILED),
-    joinSegments(namespace, CREATE, SUCCEEDED),
-    joinSegments(namespace, READ, BEGAN),
-    joinSegments(namespace, READ, FAILED),
-    joinSegments(namespace, READ, SUCCEEDED),
-    joinSegments(namespace, UPDATE, BEGAN),
-    joinSegments(namespace, UPDATE, FAILED),
-    joinSegments(namespace, UPDATE, SUCCEEDED),
-    joinSegments(namespace, DELETE, BEGAN),
-    joinSegments(namespace, DELETE, FAILED),
-    joinSegments(namespace, DELETE, SUCCEEDED),
+    joinSegments(namespace, verb, BEGAN),
+    joinSegments(namespace, verb, FAILED),
+    joinSegments(namespace, verb, SUCCEEDED)
   );
+}
+
+export const makeCreateActionTypes = makeVerbActionTypes.bind(null, CREATE);
+export const makeReadActionTypes = makeVerbActionTypes.bind(null, READ);
+export const makeUpdateActionTypes = makeVerbActionTypes.bind(null, UPDATE);
+export const makeDeleteActionTypes = makeVerbActionTypes.bind(null, DELETE);
+
+export function makeActionTypes(namespace: string): ActionTypes {
+  return {
+    ...makeCreateActionTypes(namespace),
+    ...makeReadActionTypes(namespace),
+    ...makeUpdateActionTypes(namespace),
+    ...makeDeleteActionTypes(namespace),
+  };
 }
