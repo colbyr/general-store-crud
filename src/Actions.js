@@ -6,7 +6,7 @@ import {
   makeDeleteActionTypes,
 } from './ActionTypes';
 
-type Fetch = (ids: Array<string | number>) => Promise<any>;
+type Fetch = (params: any) => Promise<any>;
 type Dispatch = (actionType: string, data: any) => void;
 
 export function runAction(
@@ -23,7 +23,10 @@ export function runAction(
       dispatch(succeededActionType, {params, result});
       return result;
     })
-    .catch((error) => dispatch(failedActionType, {params, error}));
+    .catch((error) => {
+      dispatch(failedActionType, {params, error});
+      throw error;
+    });
 }
 
 export function makeCreateAction(
