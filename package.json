@@ -1,6 +1,6 @@
 {
   "name": "general-store-crud",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "C.R.U.D. actions for general-store.",
   "main": "lib/index.js",
   "scripts": {
@@ -45,6 +45,10 @@
     "flux",
     "general-store",
     "rest"
+  ],
+  "files": [
+    "dist",
+    "lib"
   ],
   "author": "Colby Rabideau <me@colbyr.com>",
   "license": "MIT",
